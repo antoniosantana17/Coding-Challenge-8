@@ -14,7 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Please fill out all fields and select at least one preference.");
             return;
         }
+        const registrationItem = document.createElement('div');
+        registrationItem.classList.add('registration-item');
+        registrationItem.innerHTML = `
+            <h3>${name}</h3>
+            <p>Email: ${email}</p>
+            <p>Event Date: ${eventDate}</p>
+            <p>Preferences: ${preferences.join(', ')}</p>
+        `;
 
+        registrationDisplay.appendChild(registrationItem);
 
-    }}
+        form.reset();
+    });
+});
 
