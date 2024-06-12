@@ -9,14 +9,54 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
+        form {
+            margin-bottom: 20px;
+        }
+        .registration-display {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        .registration-item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>Event Registration Portal</h1>
     <form id="registrationForm">
-        <!-- Form elements will be added in the next step -->
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="eventDate">Event Date:</label>
+            <select id="eventDate" name="eventDate" required>
+                <option value="">Select date</option>
+                <option value="2024-06-01">June 1, 2024</option>
+                <option value="2024-06-15">June 15, 2024</option>
+                <option value="2024-07-01">July 1, 2024</option>
+            </select>
+        </div>
+        <div>
+            <label>Meal Preference:</label><br>
+            <input type="checkbox" id="vegetarian" name="preference" value="Vegetarian">
+            <label for="vegetarian">Vegetarian</label><br>
+            <input type="checkbox" id="nonVegetarian" name="preference" value="Non-Vegetarian">
+            <label for="nonVegetarian">Non-Vegetarian</label><br>
+            <input type="checkbox" id="vegan" name="preference" value="Vegan">
+            <label for="vegan">Vegan</label>
+        </div>
+        <button type="submit">Register</button>
     </form>
-    <div id="registrationDisplay"></div>
+    <div id="registrationDisplay" class="registration-display"></div>
     <script src="script.js"></script>
 </body>
 </html>
